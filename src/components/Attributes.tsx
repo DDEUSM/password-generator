@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 import { ReactComponent as CheckLogo } from '../assets/check.svg';
+import { setter } from './pswd_generator';
+
+export type Attr = {
+    charLength?: number
+    small : boolean,
+    capital : boolean,
+    numeric : boolean,
+    especial : boolean
+}
 
 function Attributes(){
-
-    type Attr = {
-        small : boolean,
-        capital : boolean,
-        numeric : boolean,
-        especial : boolean
-    }
 
     const [AttrState, setAttrState] = useState<Attr>({
         small : false,
         capital : false,
-        numeric : false,
+        numeric : true,
         especial : false
     });
-
 
     function selected(event: React.MouseEvent<HTMLDivElement>){
         let item_id = event.currentTarget.id;        
@@ -34,6 +35,7 @@ function Attributes(){
                 setAttrState({...AttrState, especial: !AttrState.especial});
                 break;
         }
+        setter(AttrState);
     }
 
     return(

@@ -45,9 +45,7 @@ body {
     box-shadow: 2px 2px 10px 1px rgba(2, 0, 141, 0.176);
 }
 
-.component-svg {
-    width: 28px;
-    height: 28px;
+.component-svg {    
     fill: #666CBD;
     cursor: pointer;
     transition: all ease-in .3s;
@@ -67,6 +65,12 @@ body {
 
 .light-theme {
     
+}
+
+.count-posi{
+    position: absolute;
+    margin-top: -110px;
+    left: 0px;
 }
 
 @media only screen and (min-width: 1024px){

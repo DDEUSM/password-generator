@@ -1,17 +1,20 @@
-import React from "react";
+import React,{ useState } from "react";
+import { setter } from "./pswd_generator";
 
-type props = {
-    charLength : (chars : number) => void 
-}
 
-function Slider({charLength} : props){
+function Slider(){    
+
+    const [charLength, setCharLength] = useState(5);
 
     function rangeChange(event : React.ChangeEvent<HTMLInputElement>){
-        charLength(parseInt(event.target.value));
+        const value = parseInt(event.target.value); 
+        setCharLength(value);
+        setter(value);
     }
 
     return(
-        <div className="flex flex-col justify-center items-center mx-4 mb-1 font-Raleway h-12 w-full ">
+        <div className="relative flex flex-col justify-center items-center mx-4 mb-1 font-Raleway h-12 w-full ">
+            <label htmlFor="" className="count-posi flex justify-center items-center w-20 h-6 rounded bg-purple font-Poppins text-2xl text-white">{charLength}</label>
             <div className="flex justify-between w-full">
                 <div className="flex gap-1">
                     <div className="text-purple">Min</div>
