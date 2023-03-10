@@ -64,8 +64,7 @@ function Attributes(){
                                    
                 }else if(countAttrOn > 1){
                     setOnAttr(countAttrOn - 1);
-                    setAttrState({...AttrState, especial: !AttrState.especial});
-                    
+                    setAttrState({...AttrState, especial: !AttrState.especial});                    
                 }  
                 break;
         }             
@@ -76,7 +75,8 @@ function Attributes(){
     ), [AttrState, countAttrOn]);
 
     return(
-        <div className="attributes-layout flex justify-center items-center h-60 w-full  text-white rounded-md font-Raleway bg-purple2 dark:bg-darkblue">
+        <div className="attributes-layout relative flex justify-center items-center h-60 w-full text-white rounded-md font-Raleway bg-purple2 dark:bg-darkblue">
+            <div className="absolute top-3 text-white dark:text-grey ">Choose your password settings</div>
             <div className="flex flex-col gap-3">
                 <div id='small' className="flex justify-center items-center gap-1 cursor-pointer" onClick={selected}>
                     <div className="">

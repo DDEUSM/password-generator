@@ -21,7 +21,7 @@ function Result(){
     }
 
     return(
-        <div className="flex flex-col justify-center w-full font-Poppins  mx-4 ">
+        <div className="flex flex-col justify-center w-full font-Poppins mx-4">
             {level === 'Low security'?  <label htmlFor="" className="text-red font-Raleway">{level}</label>
                 : level === 'Medium security'? <label htmlFor="" className="text-orange font-Raleway">{level}</label> 
                     : level === 'High security'? <label htmlFor="" className="text-blue font-Raleway">{level}</label>
