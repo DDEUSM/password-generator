@@ -76,7 +76,7 @@ function Attributes(){
 
     return(
         <div className="attributes-layout relative flex justify-center items-center h-60 w-full text-white rounded-md font-Raleway bg-purple2 dark:bg-darkblue">
-            <div className="absolute top-3 text-white dark:text-grey ">Choose your password settings</div>
+            <label className="absolute top-3 text-white dark:text-grey ">Choose your password settings</label>
             <div className="flex flex-col gap-3">
                 <div id='small' className="flex justify-center items-center gap-1 cursor-pointer" onClick={selected}>
                     <div className="">

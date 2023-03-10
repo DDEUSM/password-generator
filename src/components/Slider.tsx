@@ -30,7 +30,7 @@ function Slider(){
                 <input className="slider-range w-full" type="range" name="" id="" min={5} max={25} defaultValue={5} onChange={rangeChange}/>
             </div>
             <div className="flex gap-1">
-                    <div className="text-purple2 dark:text-grey">Roll to choose your password length</div>                    
+                    <label className="text-purple2 dark:text-grey">Roll to choose your password length</label>                    
             </div>
         </div>
     );
