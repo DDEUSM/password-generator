@@ -16,6 +16,9 @@ module.exports = {
       'purple3' : '#dcd6ff',
       'grey' : '#5E5F70',
       'red' : 'rgb(220, 38, 38)',
+      'orange': '#ff8c00',
+      'blue': '#0086fc',
+      'green': '#008000',
     },
     extend: {      
     },

@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react';
-import { ReactComponent as RefreshLogo } from "../assets/refresh.svg";
+import { useState } from 'react';
 import { ReactComponent as CopyLogo } from "../assets/copy.svg";
 import { ReactComponent as PlayLogo } from "../assets/botao-play.svg";
-import { generator } from "./pswd_generator";
+import { defLevel, generator } from "./pswd_generator";
 
-type props = {    
-    
-}
 
-function Result(){   
-    const [level, setLevel] = useState('');
+function Result(){
+
+    type Level = 'Low security' | 'Medium security' | 'High security' | 'Max security' | '';
+
+    const [level, setLevel] = useState<Level>();
     const [resultPswd, setResultPswd] = useState('');
 
     function copyPassword(){
@@ -17,14 +16,20 @@ function Result(){
     }
 
     function playGenerator(){
-        setResultPswd(generator());        
+        setResultPswd(generator());
+        setLevel(defLevel());
     }
 
     return(
         <div className="flex flex-col justify-center w-full font-Poppins  mx-4 ">
-            <label htmlFor="" className="text-red font-Raleway">{level}</label>
+            {level === 'Low security'?  <label htmlFor="" className="text-red font-Raleway">{level}</label>
+                : level === 'Medium security'? <label htmlFor="" className="text-orange font-Raleway">{level}</label> 
+                    : level === 'High security'? <label htmlFor="" className="text-blue font-Raleway">{level}</label>
+                        : level === 'Max security'? <label htmlFor="" className="text-green font-Raleway">{level}</label>
+                            :  <label htmlFor="" className="text-grey font-Raleway">Password level security</label>
+            }
 
-            <label className="flex items-center result-pswd bg-white text-purple dark:bg-azul text-purple w-full h-12 border border-purple rounded-lg p-1 font-Poppins">{resultPswd!= ''? resultPswd : 'Password generate'}</label>
+            <label className="flex items-center result-pswd bg-white text-purple dark:bg-azul text-purple w-full h-12 border border-purple rounded-lg p-1 font-Poppins">{resultPswd!== ''? resultPswd : 'Password generate'}</label>
 
             <div className="flex w-full justify-end my-3">
                 

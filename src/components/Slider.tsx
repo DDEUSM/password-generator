@@ -22,11 +22,11 @@ function Slider(){
                 </div>
                 <div className="flex gap-1">
                     <div className="text-purple">Max</div>
-                    <div className="text-purple dark:text-white">200</div>
+                    <div className="text-purple dark:text-white">25</div>
                 </div>
             </div>
             <div className="flex justify-center items-center w-full relative">
-                <input className="slider-range w-full" type="range" name="" id="" min={5} max={200} defaultValue={5} onChange={rangeChange}/>
+                <input className="slider-range w-full" type="range" name="" id="" min={5} max={25} defaultValue={5} onChange={rangeChange}/>
             </div>
         </div>
     );

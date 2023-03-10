@@ -19,24 +19,61 @@ function Attributes(){
         especial : false
     });
 
+    const [countAttrOn, setOnAttr] = useState(1);
+
+
     function selected(event: React.MouseEvent<HTMLDivElement>){
-        let item_id = event.currentTarget.id;        
+        const item_id = event.currentTarget.id;        
+        
         switch(item_id){
             case 'small':
-                setAttrState({...AttrState, small: !AttrState.small})                
+                if(AttrState.small === false){
+                    setOnAttr(countAttrOn + 1);
+                    setAttrState({...AttrState, small: !AttrState.small});                                    
+                }else if(countAttrOn > 1){
+                    setOnAttr(countAttrOn - 1);
+                    setAttrState({...AttrState, small: !AttrState.small});
+                    
+                }
                 break;
             case 'capital':
-                setAttrState({...AttrState, capital: !AttrState.capital})   
+                if(AttrState.capital === false){
+                    setOnAttr(countAttrOn + 1);  
+                    setAttrState({...AttrState, capital: !AttrState.capital});
+                                  
+                }else if(countAttrOn > 1){
+                    setOnAttr(countAttrOn - 1);
+                    setAttrState({...AttrState, capital: !AttrState.capital});
+                    
+                }  
                 break;
             case 'numeric':
-                setAttrState({...AttrState, numeric: !AttrState.numeric});
+                if(AttrState.numeric === false){
+                    setOnAttr(countAttrOn + 1);
+                    setAttrState({...AttrState, numeric: !AttrState.numeric});
+                                    
+                }else if(countAttrOn > 1){
+                    setOnAttr(countAttrOn - 1);
+                    setAttrState({...AttrState, numeric: !AttrState.numeric});                    
+                }  
                 break;
             case 'especial':
-                setAttrState({...AttrState, especial: !AttrState.especial});
+                if(AttrState.especial === false){
+                    setOnAttr(countAttrOn + 1); 
+                    setAttrState({...AttrState, especial: !AttrState.especial});
+                                   
+                }else if(countAttrOn > 1){
+                    setOnAttr(countAttrOn - 1);
+                    setAttrState({...AttrState, especial: !AttrState.especial});
+                    
+                }  
                 break;
-        }
-        setter(AttrState);
+        }             
     }
+
+    useEffect(() => (        
+        setter(AttrState)
+    ), [AttrState, countAttrOn]);
 
     return(
         <div className="attributes-layout flex justify-center items-center h-60 w-full  text-white rounded-md font-Raleway bg-purple2 dark:bg-darkblue">
