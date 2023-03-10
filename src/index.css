@@ -6,8 +6,7 @@
 @tailwind utilities;
 
 
-body {
-   transform: scale(1.2);   
+body {   
 }
 
 .result-pswd {
